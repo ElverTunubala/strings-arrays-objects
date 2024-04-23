@@ -12,7 +12,7 @@ while (askFromUser) {
         alert("Ingrese su nombre por favor")
         continue;
     }
-    const fullName = name.split(",")
+    const fullName = name.split(" ")
     alert(fullName)
 
     if (fullName.length > 2) {
