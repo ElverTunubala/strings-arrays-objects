@@ -3,12 +3,13 @@ let eventos = {};
 
 // Función para crear un nuevo evento
 function crearEvento() {
-    // Solicitar datos del evento al usuario
+
+    // Solicitar datos 
     let nombre = prompt("Ingrese el nombre del evento:");
     let fecha = prompt("Ingrese la fecha del evento (YYYY-MM-DD):");
     let descripcion = prompt("Ingrese la descripción del evento:");
 
-    // Crear un objeto de evento con un identificador único
+    // Crear un objeto de evento con un id unico
     let id = Object.keys(eventos).length + 1;
     let nuevoEvento = {
         id: id,
@@ -17,11 +18,11 @@ function crearEvento() {
         description: descripcion.trim()
     };
 
-    // Almacenar el evento en la lista de eventos
+    // Almacenar el nuevo evento en la lista de eventos
     eventos[id] = nuevoEvento;
 }
 
-// Función para visualizar todos los eventos
+// Función para visualizar  los eventos
 function visualizarEventos() {
     console.log("Lista de Eventos:");
     Object.values(eventos).forEach(evento => {
@@ -78,7 +79,7 @@ function eliminarEvento(id) {
 crearEvento();
 crearEvento();
 visualizarEventos();
-buscarEventoPorNombre("evento");
-actualizarEvento(1);
-eliminarEvento(2);
+// buscarEventoPorNombre("evento");
+// actualizarEvento(1);
+// eliminarEvento(2);
 visualizarEventos();
