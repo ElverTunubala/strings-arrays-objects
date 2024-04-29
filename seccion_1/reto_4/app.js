@@ -1,5 +1,31 @@
 // Objeto donde se va almacenar los eventos
 let eventos = {};
+let ciclo = true
+while (ciclo){
+    let respuestaUsuario =prompt("1.si deseas crear un evento\n2.si deseas buscar un evento\n3.si deseas actualizar\n4.si deseas eliminar\n5.si deseas ver los eventos\nsalir")
+
+    if (respuestaUsuario =="1"){
+        crearEvento();
+    }else if (respuestaUsuario =="2"){
+        let nombre=prompt("Ingrese el nombre evento que desea buscar")
+        buscarEventoPorNombre(nombre);
+    }else if (respuestaUsuario =="3"){
+        let updateEvento=parseInt(prompt("Ingrese ID del evento que desea actualizar"),2)
+        actualizarEvento(updateEvento);
+    }else if (respuestaUsuario =="4"){
+        let deleteEvento=parseInt(prompt("Ingrese ID del evento que desea eliminar"),2)
+        eliminarEvento(deleteEvento);
+    }else if (respuestaUsuario =="5"){
+        visualizarEventos();
+    }
+    else if (respuestaUsuario =="salir"){
+        ciclo = false
+    }
+    else{
+        alert("OPCION NO VALIDA")
+        ciclo=false
+    }
+}
 
 // Función para crear un nuevo evento
 function crearEvento() {
@@ -76,10 +102,4 @@ function eliminarEvento(id) {
 }
 
 
-crearEvento();
-crearEvento();
-visualizarEventos();
-// buscarEventoPorNombre("evento");
-// actualizarEvento(1);
-// eliminarEvento(2);
-visualizarEventos();
+
